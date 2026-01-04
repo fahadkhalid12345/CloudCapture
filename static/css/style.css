@@ -1,30 +1,35 @@
-/* --- CloudCapture: Pink & White Glassmorphism Theme --- */
+/* =========================================================
+   CloudCapture – Pink & White Glassmorphism (FINAL FIXED)
+   ========================================================= */
+
+/* ---------- ROOT VARIABLES ---------- */
 :root {
-    /* Soft Pink Gradient Background */
-    --bg-gradient: radial-gradient(at 0% 0%, rgba(255, 182, 193, 0.25) 0px, transparent 50%), 
-                   radial-gradient(at 100% 0%, rgba(255, 200, 220, 0.25) 0px, transparent 50%), 
-                   radial-gradient(at 100% 100%, rgba(255, 160, 190, 0.15) 0px, transparent 50%), 
+    --bg-gradient: radial-gradient(at 0% 0%, rgba(255, 182, 193, 0.25) 0px, transparent 50%),
+                   radial-gradient(at 100% 0%, rgba(255, 200, 220, 0.25) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(255, 160, 190, 0.15) 0px, transparent 50%),
                    radial-gradient(at 0% 100%, rgba(255, 255, 255, 0.6) 0px, transparent 50%);
-    
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --pink-main: #ec4899;          /* Primary Pink */
-    --pink-light: #f9a8d4;         /* Light Pink */
-    --text-dark: #3f0f2e;          /* Soft dark text */
+
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --pink-main: #ec4899;
+    --pink-light: #f9a8d4;
+    --text-dark: #3f0f2e;
     --border-glass: rgba(236, 72, 153, 0.25);
 }
 
+/* ---------- GLOBAL BODY ---------- */
 body {
     background-color: #fff5f9 !important;
     background-image: var(--bg-gradient) !important;
     background-attachment: fixed;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     min-height: 100vh;
     color: var(--text-dark);
+    overflow-x: hidden;
 }
 
-/* --- BACKGROUND ICONS (SOFT PINK) --- */
+/* ---------- BACKGROUND ICONS ---------- */
 body::before {
-    content: "\f0c2"; /* Cloud Icon */
+    content: "\f0c2";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: fixed;
@@ -36,7 +41,7 @@ body::before {
 }
 
 body::after {
-    content: "\f030"; /* Camera Icon */
+    content: "\f030";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: fixed;
@@ -47,8 +52,60 @@ body::after {
     z-index: -1;
 }
 
-/* --- GLASSMORPHISM CARDS --- */
-.auth-card,
+/* =========================================================
+   AUTH / LOGIN CARD (MAIN FIX)
+   ========================================================= */
+.auth-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid var(--border-glass) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 20px 45px rgba(236, 72, 153, 0.18) !important;
+
+    max-width: 420px;       /* 🔥 SIZE FIX */
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.6rem 2.2rem;
+    box-sizing: border-box;
+    overflow: hidden;      /* 🔥 TEXT WILL NEVER GO OUT */
+}
+
+/* ---------- LOGIN TITLE ---------- */
+.auth-card h1,
+.auth-card .brand-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 1.6rem;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+/* ---------- INPUTS ---------- */
+.auth-card input,
+.auth-card select {
+    border-radius: 12px !important;
+    font-size: 0.95rem;
+}
+
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 2rem 1.6rem;
+    }
+
+    .auth-card h1,
+    .auth-card .brand-title {
+        font-size: 1.9rem;
+    }
+}
+
+/* =========================================================
+   OTHER GLASS CARDS
+   ========================================================= */
 .post-card,
 .card {
     background: var(--glass-bg) !important;
@@ -60,36 +117,42 @@ body::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.auth-card:hover,
 .post-card:hover,
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 45px rgba(236, 72, 153, 0.25) !important;
 }
 
-/* --- PINK PRIMARY BUTTONS --- */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 .btn-primary {
     background: linear-gradient(135deg, #ec4899, #f472b6) !important;
     border: none !important;
-    border-radius: 14px !important;
+    border-radius: 16px !important;
     font-weight: 600 !important;
     color: #ffffff !important;
-    box-shadow: 0 8px 18px rgba(236, 72, 153, 0.35) !important;
+    padding: 0.6rem 1.5rem;
+    box-shadow: 0 10px 22px rgba(236, 72, 153, 0.4) !important;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(236, 72, 153, 0.5) !important;
+    box-shadow: 0 16px 32px rgba(236, 72, 153, 0.55) !important;
 }
 
-/* --- NAVBAR (WHITE + PINK GLASS) --- */
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 .navbar {
     background: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: blur(20px) !important;
     border-bottom: 1px solid rgba(236, 72, 153, 0.25) !important;
 }
 
-/* --- LINKS & TEXT ACCENTS --- */
+/* =========================================================
+   LINKS
+   ========================================================= */
 a {
     color: var(--pink-main);
     text-decoration: none;
