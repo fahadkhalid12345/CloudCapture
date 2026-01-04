@@ -1,20 +1,20 @@
-/* --- CloudCapture: Azure-Inspired Glassmorphism Theme --- */
+/* --- CloudCapture: Pink & White Glassmorphism Theme --- */
 :root {
-    /* Cloud Gradient: Blue and White tones */
-    --bg-gradient: radial-gradient(at 0% 0%, rgba(0, 120, 212, 0.1) 0px, transparent 50%), 
-                   radial-gradient(at 100% 0%, rgba(80, 230, 255, 0.1) 0px, transparent 50%), 
-                   radial-gradient(at 100% 100%, rgba(0, 120, 212, 0.05) 0px, transparent 50%), 
-                   radial-gradient(at 0% 100%, rgba(255, 255, 255, 0.2) 0px, transparent 50%);
+    /* Soft Pink Gradient Background */
+    --bg-gradient: radial-gradient(at 0% 0%, rgba(255, 182, 193, 0.25) 0px, transparent 50%), 
+                   radial-gradient(at 100% 0%, rgba(255, 200, 220, 0.25) 0px, transparent 50%), 
+                   radial-gradient(at 100% 100%, rgba(255, 160, 190, 0.15) 0px, transparent 50%), 
+                   radial-gradient(at 0% 100%, rgba(255, 255, 255, 0.6) 0px, transparent 50%);
     
-    --glass-bg: rgba(255, 255, 255, 0.88);
-    --azure-blue: #0078d4;
-    --sky-light: #50e6ff;
-    --text-dark: #0f172a;
-    --border-glass: rgba(255, 255, 255, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --pink-main: #ec4899;          /* Primary Pink */
+    --pink-light: #f9a8d4;         /* Light Pink */
+    --text-dark: #3f0f2e;          /* Soft dark text */
+    --border-glass: rgba(236, 72, 153, 0.25);
 }
 
 body {
-    background-color: #f0f9ff !important; 
+    background-color: #fff5f9 !important;
     background-image: var(--bg-gradient) !important;
     background-attachment: fixed;
     font-family: 'Inter', sans-serif;
@@ -22,15 +22,16 @@ body {
     color: var(--text-dark);
 }
 
-/* --- CLOUD BACKGROUND ICONS --- */
+/* --- BACKGROUND ICONS (SOFT PINK) --- */
 body::before {
     content: "\f0c2"; /* Cloud Icon */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: fixed;
-    top: 5%; left: 2%;
+    top: 5%;
+    left: 2%;
     font-size: 12rem;
-    color: rgba(0, 120, 212, 0.04);
+    color: rgba(236, 72, 153, 0.06);
     z-index: -1;
 }
 
@@ -39,40 +40,61 @@ body::after {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: fixed;
-    bottom: 10%; right: 2%;
+    bottom: 10%;
+    right: 2%;
     font-size: 15rem;
-    color: rgba(80, 230, 255, 0.04);
+    color: rgba(249, 168, 212, 0.08);
     z-index: -1;
 }
 
-/* --- ENHANCED GLASS CARDS --- */
-.auth-card, .post-card, .card {
+/* --- GLASSMORPHISM CARDS --- */
+.auth-card,
+.post-card,
+.card {
     background: var(--glass-bg) !important;
-    backdrop-filter: blur(15px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid var(--border-glass) !important;
-    border-radius: 20px !important;
-    box-shadow: 0 15px 35px rgba(0, 120, 212, 0.06) !important;
-    transition: transform 0.3s ease;
+    border-radius: 22px !important;
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.15) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- AZURE BUTTONS --- */
+.auth-card:hover,
+.post-card:hover,
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(236, 72, 153, 0.25) !important;
+}
+
+/* --- PINK PRIMARY BUTTONS --- */
 .btn-primary {
-    background: linear-gradient(135deg, #0078d4, #00a1ff) !important;
+    background: linear-gradient(135deg, #ec4899, #f472b6) !important;
     border: none !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     font-weight: 600 !important;
-    box-shadow: 0 8px 16px rgba(0, 120, 212, 0.15) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(236, 72, 153, 0.35) !important;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0, 120, 212, 0.25) !important;
+    box-shadow: 0 14px 28px rgba(236, 72, 153, 0.5) !important;
 }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR (WHITE + PINK GLASS) --- */
 .navbar {
-    background: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: blur(20px) !important;
-    border-bottom: 1px solid rgba(0, 120, 212, 0.1) !important;
+    border-bottom: 1px solid rgba(236, 72, 153, 0.25) !important;
+}
+
+/* --- LINKS & TEXT ACCENTS --- */
+a {
+    color: var(--pink-main);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #db2777;
 }
