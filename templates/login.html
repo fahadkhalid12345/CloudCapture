@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="auth-container d-flex flex-column align-items-center">
-    <div class="auth-card bg-white border p-5 text-center" style="width: 350px;">
+<div class="auth-container d-flex flex-column align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="auth-card p-5 text-center">
         <h1 style="font-family: 'Grand Hotel', cursive; font-size: 3.5rem; margin-bottom: 30px;">Cloud
             Capture</h1>
         
         <form method="POST">
-            <div class="mb-2">
+            <div class="mb-3">
                 <input type="text" name="username" class="form-control bg-light border" placeholder="Username" required>
             </div>
             
-            <div class="mb-2">
+            <div class="mb-3">
                 <input type="password" name="password" class="form-control bg-light border" placeholder="Password" required>
             </div>
 
-            <div class="mb-3">
-                <select name="role" class="form-select bg-light text-muted border" style="font-size: 13px;" required>
+            <div class="mb-4">
+                <select name="role" class="form-select bg-light text-muted border" required>
                     <option value="" disabled selected>Select Login Role</option>
-                    <option value="consumer">Consumer</option>
+                    <option value="consumer">User</option>
                     <option value="creator">Creator</option>
                 </select>
-                <div class="form-text text-start mt-1" style="font-size: 10px;">Select the role you registered with.</div>
+                <div class="form-text text-start mt-1" style="font-size: 11px;">Select the role you registered with.</div>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100 fw-bold py-1">Log In</button>
+            <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Log In</button>
         </form>
 
         <div class="d-flex align-items-center my-4">
@@ -35,7 +35,7 @@
         <a href="#" class="text-primary fw-bold text-decoration-none small">Forgot password?</a>
     </div>
     
-    <div class="auth-card bg-white border mt-3 py-3 text-center" style="width: 350px;">
+    <div class="auth-card mt-3 py-3 text-center">
         <p class="text-sm mb-0">Don't have an account? <a href="{{ url_for('register') }}" class="fw-bold text-primary text-decoration-none">Sign up</a></p>
     </div>
 </div>

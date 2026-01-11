@@ -1,5 +1,5 @@
 /* =========================================================
-   CloudCapture – Pink & White Glassmorphism (FINAL FIXED)
+   CloudCapture – Pink & White Glassmorphism (UPDATED)
    ========================================================= */
 
 /* ---------- ROOT VARIABLES ---------- */
@@ -54,7 +54,7 @@ body::after {
 }
 
 /* =========================================================
-   AUTH / LOGIN CARD (MAIN FIX)
+   AUTH / LOGIN CARD (UPDATED WIDTH)
    ========================================================= */
 .auth-card {
     background: var(--glass-bg) !important;
@@ -64,19 +64,20 @@ body::after {
     border-radius: 24px !important;
     box-shadow: 0 20px 45px rgba(236, 72, 153, 0.18) !important;
 
-    max-width: 420px;       /* 🔥 SIZE FIX */
+    /* 🔥 CHANGED: Width barha di hai taake card wide lage */
+    max-width: 600px;      
     width: 100%;
     margin: 0 auto;
     padding: 2.6rem 2.2rem;
     box-sizing: border-box;
-    overflow: hidden;      /* 🔥 TEXT WILL NEVER GO OUT */
+    overflow: hidden;
 }
 
 /* ---------- LOGIN TITLE ---------- */
 .auth-card h1,
 .auth-card .brand-title {
     font-family: 'Playfair Display', serif !important;
-    font-size: 2.2rem;
+    font-size: 2.5rem; /* Thora font size barhaya hai wide card k liye */
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -89,18 +90,20 @@ body::after {
 .auth-card input,
 .auth-card select {
     border-radius: 12px !important;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    padding: 0.8rem; /* Inputs ko thora comfortable kiya */
 }
 
 /* ---------- MOBILE FIX ---------- */
-@media (max-width: 480px) {
+@media (max-width: 650px) {
     .auth-card {
         padding: 2rem 1.6rem;
+        max-width: 90%; /* Mobile pe side se thora gap rakhega */
     }
 
     .auth-card h1,
     .auth-card .brand-title {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 }
 
@@ -133,7 +136,7 @@ body::after {
     border-radius: 16px !important;
     font-weight: 600 !important;
     color: #ffffff !important;
-    padding: 0.6rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     box-shadow: 0 10px 22px rgba(236, 72, 153, 0.4) !important;
 }
 
